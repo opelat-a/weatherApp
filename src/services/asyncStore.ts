@@ -18,6 +18,12 @@ export const setAsyncStore = async (value: WeatherType, key: string) => {
   } catch (error) {}
 };
 
+export const deleteAsyncStore = async (key: string) => {
+  try {
+    await AsyncStorage.removeItem(key);
+  } catch (error) {}
+};
+
 export enum AsyncStoreKeys {
   weather = 'AsyncStoreKeys-WEATHER',
 }

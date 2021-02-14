@@ -10,7 +10,7 @@ const DefaultWeatherScreen: FC = () => {
   return (
     <MainContainer>
       {isFetch ? (
-        <ActivityIndicator color="blue" size="large" />
+        <ActivityIndicator color="#cd84f1" size="large" />
       ) : (
         <WeatherMainComponent />
       )}
