@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {getWeatherWithName} from './saga/actions';
 import {setWeatherWithName} from './redux/actions';
+import {deleteAsyncStore, AsyncStoreKeys} from 'services/asyncStore';
 
 export const useWeather = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export const useWeather = () => {
 
   const anotherCity = () => {
     dispatch(setWeatherWithName(null));
+    deleteAsyncStore(AsyncStoreKeys.weather);
   };
 
   return {getWeather, anotherCity};
